@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('/static/main/images/bg.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  color: #000;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Ширина блока выбора списка */
+  margin-bottom: 15px; /* Отступ снизу */
+}
+
+.dropdown-btn {
+  width: 100%; /* Кнопка теперь занимает всю ширину */
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown-btn:hover {
+  background-color: #fff;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  min-width: 100%; /* Ширина выпадающего меню */
+  margin-top: 5px;
+  padding: 0; /* Убираем дополнительные отступы */
+}
+
+.dropdown-content div {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between; /* Выравнивание контента по краям */
+  align-items: center;
+}
+
+.dropdown-content div:hover {
+  background-color: #fff;
+}
+
+.dropdown-content .btn-container {
+  display: flex;
+  gap: 10px; /* Отступы между иконками */
+}
+
+.dropdown-content .add-btn-container {
+  display: flex;
+  justify-content: center; /* Центровка кнопки */
+  padding: 10px;
+}
+
+.btn-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 50%;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-icon:hover {
+  background-color: #0f0;
+}
+
+.btn-icon i {
+  font-size: 20px;
+}
+
+button {
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  padding: 10px;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 15px; /* Отступ сверху */
+}
+
+button:hover {
+  background-color: #0f0;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .dropdown-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    width: 95%;
+  }
+
+  .dropdown-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px;
+    margin-top: 8px;
+  }
+
+  .btn-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}

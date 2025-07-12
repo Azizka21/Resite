@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/register.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <form method="post">
+            {% csrf_token %}
+            <h1>Register</h1>
+            <div class="input-box">
+                {{ form.username }}
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                {{ form.password1 }}
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="input-box">
+                {{ form.password2 }}
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <div class="register-link">
+                <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+            </div>
+        </form>
+        {% if form.errors %}
+        <div class="form-errors">
+        {% for field in form %}
+            {% if field.errors %}
+                <ul>
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
+
+    </div>
+</body>
+</html>

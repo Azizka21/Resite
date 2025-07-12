@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/result.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% for pair in pairs %}
+            <div><p>{{ pair.0 }} | {{   pair.1 }}</p></div>
+        {% endfor %}
+    </div>
+</body>
+</body>
+</html>
